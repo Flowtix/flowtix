@@ -1,48 +1,54 @@
 [app]
 
-title = Atlas YouTube Uploader
+title = AtlasUploader
 package.name = atlasuploader
 package.domain = org.atlas
 
 source.dir = .
-source.include_exts = py,kv
+source.include_exts = py,kv,png,jpg,atlas
 
 version = 1.0
 
-requirements = python3,kivy,yt-dlp,google-api-python-client,google-auth-oauthlib,requests
+requirements = python3,kivy,yt-dlp,google-api-python-client,google-auth-oauthlib
 
 orientation = portrait
 
 fullscreen = 0
 
-# Permissions required
-android.permissions = INTERNET,READ_EXTERNAL_STORAGE,WRITE_EXTERNAL_STORAGE
 
-# Android API versions
+# ---------- Android settings ----------
+
 android.api = 33
 android.minapi = 21
+android.sdk = 33
 
-# Android architecture
+android.ndk = 25b
+android.ndk_api = 21
+
+android.accept_sdk_license = True
+
+android.permissions = INTERNET
+
 android.archs = arm64-v8a,armeabi-v7a
 
-# Log level
-log_level = 2
 
-# Python for Android branch
+# ---------- Build settings ----------
+
+log_level = 2
+warn_on_root = 1
+
+
+# ---------- Python ----------
+
 p4a.branch = master
 
-# Entry point
-entrypoint = main.py
 
-# Include additional files
-source.include_patterns = assets/*
+# ---------- Packaging ----------
 
-# Icon (optional)
-# icon.filename = icon.png
+android.release_artifact = apk
 
 
-[buildozer]
+# ---------- Other ----------
 
-log_level = 2
-
-warn_on_root = 1
+android.allow_backup = True
+android.wakelock = False
