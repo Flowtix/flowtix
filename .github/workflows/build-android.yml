@@ -10,13 +10,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
       - name: Install dependencies
         run: |
           sudo apt update
           sudo apt install -y python3-pip git openjdk-17-jdk build-essential
           pip install buildozer cython
+
+      - name: Accept Android SDK licenses
+        run: |
+          yes | sdkmanager --licenses || true
 
       - name: Build APK
         run: |
