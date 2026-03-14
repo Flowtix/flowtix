@@ -18,9 +18,9 @@ fullscreen = 0
 
 # ---------- Android settings ----------
 
-android.api = 33
+android.api = 31
 android.minapi = 21
-android.sdk = 33
+android.sdk = 31
 
 android.ndk = 25b
 android.ndk_api = 21
