@@ -1,0 +1,67 @@
+<AtlasUI>:
+    orientation: "vertical"
+    padding: 10
+    spacing: 10
+
+    Button:
+        text: "Connect YouTube"
+        size_hint_y: None
+        height: 50
+        on_press: root.connect_youtube()
+
+    TextInput:
+        id: url
+        hint_text: "YouTube Link"
+        multiline: False
+        size_hint_y: None
+        height: 50
+
+    Button:
+        text: "Fetch Info"
+        size_hint_y: None
+        height: 50
+        on_press: root.fetch_info()
+
+    TextInput:
+        id: title
+        hint_text: "Title"
+        multiline: False
+        size_hint_y: None
+        height: 50
+
+    TextInput:
+        id: description
+        hint_text: "Description"
+        size_hint_y: None
+        height: 120
+
+    TextInput:
+        id: tags
+        hint_text: "Tags (comma separated)"
+        multiline: False
+        size_hint_y: None
+        height: 50
+
+    TextInput:
+        id: schedule
+        hint_text: "Publish time (YYYY-MM-DD HH:MM)"
+        multiline: False
+        size_hint_y: None
+        height: 50
+
+    Button:
+        text: "Add & Upload"
+        size_hint_y: None
+        height: 60
+        on_press: root.add_task()
+
+    ScrollView:
+        size_hint_y: 1
+
+        TextInput:
+            id: log
+            text: ""
+            readonly: True
+            multiline: True
+            size_hint_y: None
+            height: self.minimum_height
